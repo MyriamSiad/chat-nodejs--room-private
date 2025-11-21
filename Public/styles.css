@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.hidden {
+    display: none !important;
+}
+
+/* Style des messages individuels pour la démo */
+.message {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.received {
+    background-color: #e2e8f0;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.sent {
+    background-color: #4c7ad8;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+/* Conteneurs Principaux */
+#chat-container-public, 
+#chat-container-privé {
+    width: 400px;
+    height: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Empêche les éléments de déborder */
+    margin: 20px; /* Ajout d'une marge pour les séparer */
+}
+
+/* Zone des messages */
+#messages-container-public,
+#messages-container-privé {
+    flex-grow: 1; /* Prend l'espace restant verticalement */
+    padding: 15px;
+    overflow-y: auto; /* Permet le défilement des messages */
+    border-bottom: 1px solid #eee;
+}
+
+/* Zone de saisie (input-area) */
+#input-area-public,
+#input-area-privé {
+    display: flex;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Conteneurs Formulaires dans la zone de saisie */
+#message-form-public,
+#message-form-privé {
+    display: flex;
+    width: 100%;
+}
+
+/* Champs de saisie */
+#user-input-public,
+#user-input-privé {
+    flex-grow: 1; /* Prend le maximum de largeur */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+/* Boutons d'envoi */
+#send-button-public,
+#send-button-privé {
+    padding: 10px 15px;
+    background-color: #4c7ad8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+#send-button-public:hover,
+#send-button-privé:hover {
+    background-color: #3b5aa2;
+}
+
+
+#username-prompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }#username-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #username-input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+/* Ajoutez ce style dans votre balise <style> ou votre fichier CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Utiliser Flexbox pour le body si vous voulez centrer/gérer la boite de prompt */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 1. Mise en page principale (Flexbox) */
+#main-layout {
+    display: flex; /* Active Flexbox */
+    width: 90%; /* Limite la largeur de l'application */
+    max-width: 1200px;
+    margin-top: 20px;
+    border: 1px solid #ccc; /* Bordure générale */
+}
+
+/* 2. Conteneurs de chat (ils prennent la majeure partie de l'espace) */
+#chat-sections {
+    flex-grow: 3; /* Prend 3 parts de l'espace disponible */
+    padding: 10px;
+}
+
+/* 3. La liste des utilisateurs (le sidebar, à droite) */
+#user-list-box {
+    flex-grow: 1; /* Prend 1 part de l'espace disponible (plus petit que les chats) */
+    min-width: 200px; /* Taille minimale pour qu'il soit lisible */
+    background-color: #f8f8f8;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    height: 70vh; /* Hauteur de la liste des utilisateurs */
+    overflow-y: auto; /* Permet le défilement si beaucoup d'utilisateurs */
+}
+
+/* Style de chaque utilisateur */
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.user-item:hover {
+    background-color: #e0f7fa;
+}
+
+.user-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: green; /* Vert pour 'Online' */
+}
+
+.user-info {
+    font-weight: bold;
+}
